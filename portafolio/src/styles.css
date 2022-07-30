@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+/* header */
+#iconos{
+    float: right;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgb(11, 14, 31);
+}
+#logo{
+    width: auto;
+    height: 90px;
+    background-color: rgb(11, 14, 31);
+}
+#github, #linkedin, #facebook{
+    width: 30px;
+}
+#Gmail1, #session{
+    width: 35px;
+}
+
+#banner{
+    min-height: 30rem;
+    background-image: url("../src/assets/imagenes/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:  center;
+}
+@media (min-width: 18px){
+    #banner{
+        min-height: 20rem auto;
+        min-width: 10rem ;
+    }
+}
+
+
+/*foto de perfil*/
+@media (min-width: 575px){
+    #perfil{ 
+        position: absolute;
+        width: 25%;  
+        left: 2%;  
+        margin-top: -16%;
+        }
+}
+@media (max-width: 575px){
+    #perfil{
+        position: relative;
+        margin-top: -30%;
+        width: 40%;
+        left: 33%;
+    }
+}
+#alineado{
+    margin-top: 5%;
+    text-align: center;  
+}
+
+#nombre{
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+#frase{
+   color: darkgreen;
+}
