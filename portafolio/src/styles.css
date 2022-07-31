@@ -4,12 +4,15 @@
     margin-top: 25px;
     margin-left: 20px;
     margin-right: 20px;
-    background-color: rgb(11, 14, 31);
+    background-color: rgb(107, 146, 143);
+}
+div{
+    background-color: rgb(107, 146, 143);
 }
 #logo{
     width: auto;
-    height: 90px;
-    background-color: rgb(11, 14, 31);
+    height: 70px;
+    background-color: rgb(107, 146, 143);
 }
 #github, #linkedin, #facebook{
     width: 30px;
@@ -63,3 +66,32 @@
 #frase{
    color: darkgreen;
 }
+
+/* logo empresa */
+@media (min-width: 575px){
+    #logoEmpresa{ 
+        position: absolute;
+        width: 35%;  
+        left: 5%;  
+    }
+}
+@media (max-width: 575px){
+    #logoEmpresa{
+        position: relative;
+        width: 30%;
+        left: 33%;
+    }
+}
+ul{
+    list-style-type: none;
+}
+#keblar-1{
+    width: 150px;
+    background-position: center;
+}
+#delta-1{
+    margin-left: 50px;
+}
+
+/* Educación*/
+
