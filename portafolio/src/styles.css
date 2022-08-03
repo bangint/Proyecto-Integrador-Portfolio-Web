@@ -1,3 +1,27 @@
+/* Lineas decorativas */
+h1{
+    display: inline-block;
+    position: relative;
+    color: rgb(11, 11, 53);
+}
+
+h1::after, h1::before{
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em;
+}
+ h1::before{
+    left: -120px;
+ }
+ h1::after{
+    right: -120px;
+ }
+
+
+
 /* header */
 #iconos{
     float: right;
@@ -34,8 +58,6 @@ div{
         min-width: 10rem ;
     }
 }
-
-
 /*foto de perfil*/
 @media (min-width: 575px){
     #perfil{ 
@@ -55,24 +77,24 @@ div{
 }
 #alineado{
     margin-top: 5%;
-    text-align: center;  
+    text-align: center;
+    margin-bottom: 10%;  
+    
 }
-
 #nombre{
     font-weight: bolder;
     font-size: 24px;
 }
-
 #frase{
    color: darkgreen;
 }
-
 /* logo empresa */
 @media (min-width: 575px){
     #logoEmpresa{ 
         position: absolute;
         width: 35%;  
         left: 5%;  
+        display: inline-block;
     }
 }
 @media (max-width: 575px){
@@ -80,18 +102,63 @@ div{
         position: relative;
         width: 30%;
         left: 33%;
+        display: inline-block;
     }
 }
 ul{
     list-style-type: none;
 }
 #keblar-1{
+    display: inline-block;
     width: 150px;
     background-position: center;
 }
 #delta-1{
+    display: inline-block;
     margin-left: 50px;
 }
 
 /* Educación*/
 
+#logoEdu{
+    position: absolute;
+    width: 180px;
+    background-position: center;
+    box-shadow: 10px 10px 30px rgb(11, 11, 53);
+    box-shadow: ejeX ejeY difumasion color;
+}
+@media (min-width: 575px){
+    #logoEdu{ 
+        position: absolute;
+        width: 20%;
+        left: 5%;  
+        display: inline-block;
+    }
+}
+@media (max-width: 575px){
+    #logoEdu{
+        position: relative;
+        width: 35%;
+        left: 33%;
+        display: inline-block;
+    }
+}
+
+/* Hard and soft */
+
+@media (max-width: 575px){
+    #skills{
+        width: 250px;
+    }
+}
+
+/* proyectos */
+
+#proyecto{
+    margin-left: 5%;
+}
+#imgProyec{
+    width: 200px;
+    box-shadow: 10px 10px 30px rgb(11, 11, 53);
+    box-shadow: ejeX ejeY difumasion color;
+}
