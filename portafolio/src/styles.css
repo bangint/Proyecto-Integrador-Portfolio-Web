@@ -20,23 +20,32 @@ h1::after, h1::before{
     right: -120px;
  }
 
-
-
+ div{
+     background-color: rgb(107, 146, 143);
+    }
 /* header */
-#iconos{
-    float: right;
-    margin-top: 25px;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: rgb(107, 146, 143);
+.btn{
+    border-radius: 1.25rem;
 }
-div{
-    background-color: rgb(107, 146, 143);
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+@media (max-width: 575px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+#iconos{
+    position: center;
+    margin-right: 0.5em;
+    
 }
 #logo{
     width: auto;
     height: 70px;
-    background-color: rgb(107, 146, 143);
 }
 #github, #linkedin, #facebook{
     width: 30px;
@@ -52,7 +61,7 @@ div{
     background-size: cover;
     background-position:  center;
 }
-@media (min-width: 18px){
+@media (min-width: 575px){
     #banner{
         min-height: 20rem auto;
         min-width: 10rem ;
@@ -148,7 +157,7 @@ ul{
 
 @media (max-width: 575px){
     #skills{
-        width: 250px;
+        width: 200px;
     }
 }
 
@@ -161,4 +170,10 @@ ul{
     width: 200px;
     box-shadow: 10px 10px 30px rgb(11, 11, 53);
     box-shadow: ejeX ejeY difumasion color;
+}
+footer{
+    display: flex;
+    text-align: center;
+    font-size: 12px;
+    flex-direction: column;
 }
