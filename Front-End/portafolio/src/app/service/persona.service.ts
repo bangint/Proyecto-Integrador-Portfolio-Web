@@ -12,6 +12,6 @@ export class PersonaService {
   constructor(private http: HttpClient) { }
 
   public getpersona(): Observable<persona>{
-    return this.http.get<persona>(this.URL+ '')
+    return this.http.get<persona>(this.URL+ 'perfil');
   }
 }
