@@ -272,8 +272,14 @@ ul{
 
 }
 @media(min-width: 575px){
+    #skills{
+
+        width: 50%;
+    }
     #boton-skill{
-        margin: 3px;  
+        margin: 3px; 
+        padding: 0%;
+        width: 40%; 
     }
 
 

@@ -27,6 +27,8 @@ import { NewsobremyComponent } from './componentes/sobre-de/newsobremy.component
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { EditSkillComponent } from './componentes/skills/edit-skill.component';
 import { EditsoftComponent } from './componentes/skills/editsoft.component';
+import { NewProyectComponent } from './componentes/proyectos/new-proyect.component';
+
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { EditsoftComponent } from './componentes/skills/editsoft.component';
     NewsobremyComponent,
     EditSkillComponent,
     EditsoftComponent,
+    NewProyectComponent,
+    
   ],
   imports: [
     BrowserModule,
