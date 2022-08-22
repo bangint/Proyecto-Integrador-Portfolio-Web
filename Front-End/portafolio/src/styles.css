@@ -1,28 +1,37 @@
 /* Lineas decorativas */
 h1{
+    font-size: 40px;
     display: inline-block;
     position: relative;
     color: rgb(11, 11, 53);
+}
+.card{
+    
+    border: 0px;
 }
 
 h1::after, h1::before{
     content: "";
     position: absolute;
-    width: 90px;
-    height: 3px;
+    width: 50px;
+    height: 2px;
     background-color: currentColor;
     top: 0.6em;
 }
  h1::before{
-    left: -120px;
+    left: -80px;
  }
  h1::after{
-    right: -120px;
+    right: -80px;
  }
 
  div{
-     background-color: rgb(107, 146, 143);
+     background-color: rgb(202, 209, 215);
     }
+
+p{
+    font-size: 17px;
+}
 /* header */
 .btn{
     border-radius: 1.25rem;
@@ -31,6 +40,7 @@ h1::after, h1::before{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    background-color: lightslategrey;
 }
 @media (max-width: 575px){
     .container{
@@ -38,12 +48,21 @@ h1::after, h1::before{
         align-items: center;
     }
 }
+#fondobanner{
+    background-color: rgb(64, 94, 121);
+}
+#fondoboton{
+    background-color: white;
+}
 #iconos{
+    
+    background-color: lightslategrey;
     position: center;
     margin-right: 0.5em;
     
 }
 #logo{
+    background-color: lightslategrey;
     width: auto;
     height: 70px;
 }
@@ -54,34 +73,67 @@ h1::after, h1::before{
     width: 35px;
 }
 
-#banner{
-    min-height: 30rem;
-    background-image: url("../src/assets/imagenes/banner.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:  center;
-}
-@media (min-width: 575px){
+/* Banner*/
+
+@media(max-width: 575px){
     #banner{
-        min-height: 20rem auto;
-        min-width: 10rem ;
+        position: relative;
+        width: 100%;
+    }
+    #boton-logo{
+        position: absolute;
+        right: 10px;
+        top: 130px;
+    }
+    #boton-logo-guardar{
+        position: relative;
+        right: 10px;
+        top: 230px;
+    }
+    #photo-preview{
+        align-items: center;
+        width: 100%;
     }
 }
+
+@media (min-width: 575px){
+    #banner{
+        position: relative;
+        width: 100%;   
+    }
+    #boton-logo{
+        position: absolute;
+        right: 10px;
+        top: 83px;
+    }
+    #boton-logo-guardar{
+        position: absolute;
+        right: 10px;
+        top: 153px;
+    }
+    #photo-preview{
+        width: 40%;
+        align-items: center;
+        width: 50%;
+    }
+}
+
 /*foto de perfil*/
 @media (min-width: 575px){
     #perfil{ 
         position: absolute;
         width: 25%;  
-        left: 2%;  
+        left: 4%;  
         margin-top: -16%;
         }
+
 }
 @media (max-width: 575px){
     #perfil{
         position: relative;
         margin-top: -30%;
         width: 40%;
-        left: 33%;
+        left: 31%;
     }
 }
 #alineado{
@@ -90,42 +142,94 @@ h1::after, h1::before{
     margin-bottom: 10%;  
     
 }
+@media(max-width: 575px){
+    #alineado-nom{
+        margin-top: 5%;
+        text-align: center;
+        margin-bottom: 10%;
+    }
+}
+
+@media(min-width: 575px){
+    #alineado-nom{
+        margin-top: 20%;
+        background: center;
+        text-align: center;
+    }
+}
+
 #nombre{
     font-weight: bolder;
-    font-size: 24px;
+    font-size: 30px;
+}
+
+#nombre-1{
+    font-size: 17px;
 }
 #frase{
-   color: darkgreen;
+   color: rgba(4, 71, 158, 0.692);
+   font-weight: bolder;
 }
-/* logo empresa */
-@media (min-width: 575px){
-    #logoEmpresa{ 
+
+/* Sobre mi*/
+@media(max-width: 575px){
+    #boton-sobre{
         position: absolute;
-        width: 35%;  
-        left: 5%;  
-        display: inline-block;
+        margin: 105px;
+        margin-top: 55px;
     }
+    #boton-sobremy{
+        position: relative;
+        margin-top: center;
+    }
+
+}
+@media(min-width: 575px){
+    #boton-sobre{
+        position: absolute;
+        margin: 105px;
+        margin-top: 60px;
+
+    }
+    #boton-sobremy{
+        position: relative;
+    }
+}
+
+
+/* Experiencia laboral */
+@media (min-width: 575px){
+    #bot-expe{
+        position: relative;
+        width: 0px;
+        right: 15%;
+        
+    }
+  
 }
 @media (max-width: 575px){
-    #logoEmpresa{
+    #bot-expe{
         position: relative;
-        width: 30%;
-        left: 33%;
-        display: inline-block;
+        width: 0px;
+        right: 15%;
+        
+        
     }
+    
 }
 ul{
     list-style-type: none;
 }
-#keblar-1{
-    display: inline-block;
-    width: 150px;
-    background-position: center;
+#exp-456{
+    max-width: 300px;
+    box-shadow: 10px 10px 30px rgb(11, 11, 53);
+    box-shadow: ejeX ejeY difumasion color;
+    margin: 10px;
+    flex-direction: inherit;
+    background-color: rgb(202, 209, 215);
+    
 }
-#delta-1{
-    display: inline-block;
-    margin-left: 50px;
-}
+
 
 /* Educación*/
 
@@ -157,9 +261,24 @@ ul{
 
 @media (max-width: 575px){
     #skills{
-        width: 200px;
+        width: 10%;
+                    
     }
+    #boton-skill{
+        margin: 3px;
+        
+        width: 20%;
+    }
+
 }
+@media(min-width: 575px){
+    #boton-skill{
+        margin: 3px;  
+    }
+
+
+}
+
 
 /* proyectos */
 

@@ -1,0 +1,19 @@
+<app-navegacion></app-navegacion>
+<div class="col-lg-9 mx-auto" id="alineado">
+    <div class="card">
+        <div class="card-header">
+            <h1>
+                Elegir Imagen para Banner
+            </h1>
+        </div>
+        <div class="card-body form-grup" id="fondobanner">
+            <form (submit)="uploadPhoto()" enctype="multipart/form-data">
+                <input type="file" class="d-none" id="image" (change)="onPhotoSelected($event)" #photoInput>
+                <img [src]="preview || '../../../assets/imagenes/no-imagen.png'" id="photo-preview" (click)="photoInput.click()">
+                <div class="p-4"id="fondobanner">
+                    <button class="btn btn-outline-success" [disabled]="loading">{{(loading) ? 'Cargando' : 'Guardar Cambios'}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,32 +1,29 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="alineado">
-        <h1>Formación Academica</h1><br>
+        <h1>Educacion</h1>
+        <div id="alineado">
+            <button type="button" class="btn btn-outline-success" routerLink="/nuevaedu" *ngIf="isLogged">Nueva Formación</button>
+        </div>
     </div>
-    <div class="col-sm-12 col-md-10 col-lg-10 col-xs-10">
-        <ul>
-            <li>
-                <img src="../../../assets/imagenes/logo-primaria.jpg" id="logoEdu">
-                <div id="alineado">
-                    <h4>Martin Miguel de Güemes</h4>
-                    <p> (07/2011-10/2011) Estudios Primarios </p>  
+    
+    <ul class="col-lg-10 col-md-10 col-sm-12 card-group">
+        <li class="card"  id="exp-456" *ngFor="let Educacion of educacion">
+            <div class="text-center">
+                <div class="card-header">
+                    <h3>
+                        {{Educacion.nombreE}}
+                    </h3>
+                    <div class="btn-group" role="group" id="bot-expe">
+                        <button class="btn btn-outline-info" routerLink="/editedu/{{Educacion.id}}" *ngIf="isLogged"><i class="bi bi-pencil-square"></i></button>
+                        <button class="btn btn-outline-danger" (click)="borrar(Educacion.id)" *ngIf="isLogged"><i class="bi bi-trash3-fill"></i></button>            
+                    </div>
                 </div>
-            </li>
-            <li>
-                <img src="../../../assets/imagenes/logo-secundaria.png" id="logoEdu">
-                <div id="alineado">
-                    <h4>IPEM N° 92 "Antonio Berni"</h4>
-                    <p> (01/2014-07/2014)Estudios CBU</p>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>{{Educacion.descripcionE}}</p>
+                    </blockquote>
                 </div>
-            </li>
-            <li>
-                <img src="../../../assets/imagenes/logo-delta.png"  id="delta-1">
-                <div id="alineado">
-                    <h4>Delta S.A.</h4>
-                    <p> (05/2019-03/2020) Encargado<br><b>Descripción <br></b> Controlar la ejecución diaria del proyecto parte eléctrica.
-                        Análisis, generar alternativas  y Resolución de posibles problematicas.</p>
-                </div>
-            </li>
-        </ul>
-    </div>
-
+            </div>
+        </li>
+    </ul>
 </div>

@@ -1,66 +1,68 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.porfolio.jeo.controller;
 
+
+
+
 import com.porfolio.jeo.entidad.persona;
-import com.porfolio.jeo.interfac.IPersonaServicio;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+import com.porfolio.jeo.service.PersonaService;
+
+
+
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("persona/")
+//@CrossOrigin(origins = "https://portafolioweb-de08f.web.app/")
+@CrossOrigin(origins = "*")
+
+
 public class PersonaController {
-    @Autowired IPersonaServicio ipersonaService;
+
     
-    @GetMapping("persona/traer")
-    public List<persona> getpersona(){
-        return ipersonaService.getpersona();
+    private final PersonaService personaService;
+    
+    public PersonaController(PersonaService personaService){
+        this.personaService = personaService;
     }
     
-    @GetMapping("persona/perfil")
-    public persona findpersona(){
-        return ipersonaService.findpersona((long) 1);
+ 
+    
+    @GetMapping("buscar/{id}")
+    public ResponseEntity<persona> buscarPersona(@PathVariable("id")int id){
+        persona pers = personaService.BuscarporId(id);
+        return new ResponseEntity<>(pers, HttpStatus.OK);
+    }
+    
+    @PutMapping("update/{id}")
+    public ResponseEntity<persona> editarPersona(@PathVariable("id")int id,@RequestBody persona pers){
+        persona editpers = personaService.editpersona(pers);
+        return new ResponseEntity<>(editpers, HttpStatus.OK);
+    }
+    
+    @PutMapping("editarsobreMy/{id}")
+    public persona editarSobreMy(@PathVariable("id")int id,
+                                                                                            @RequestParam("sobreMy")String nuevosobreMy){
+        persona pers = personaService.BuscarporId(id);
+        pers.setSobreMy(nuevosobreMy);
+        personaService.editpersona(pers);
+        return pers;
     }
     
     
-    @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/persona/crear")
-    public String crearpersona(@RequestBody persona personas){
-        ipersonaService.savepersona(personas);
-        return "La persona fue creada.";
-    }
-    
-    @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/persona/borrar/{id}")
-    public String deletepersona(@PathVariable Long id){
-        ipersonaService.deletepersona(id);
-        return "La persona fue elimidad.";
-    }
-    
-    @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/persona/editar/{id}")
-    public persona  editpersona(@PathVariable Long id, 
-                                                        @RequestParam("nombre") String nuevoNombre,
-                                                        @RequestParam("apellido") String nuevoApellido,
-                                                        @RequestParam("img") String nuevaImg){
-                                                        
-                persona personas = ipersonaService.findpersona(id);
-                                                        
-                personas.setNombre(nuevoNombre);
-                personas.setApellido(nuevoApellido);
-                personas.setImg(nuevaImg);
-                
-                ipersonaService.savepersona(personas);
-                return personas;                                        
-         }
-               
 }

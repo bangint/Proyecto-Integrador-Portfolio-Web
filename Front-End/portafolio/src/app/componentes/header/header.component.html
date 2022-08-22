@@ -1,22 +1,12 @@
 <header>
     <div class="row">
-        <div class="container">
-            <!-- Barra -->
-            <div id="logo">
-                <img src="../../../assets/imagenes/APLogo.png"  id="logo">
-            </div>
-            <div class="iconos">
-                <ul>
-                    <a href="https://github.com/bangint"><img src="../../../assets/imagenes/github.png" id="github"></a>
-                    <a href="https://www.linkedin.com/in/jos%C3%A9-oliva-0a8866227/"><img src="../../../assets/imagenes/linkedin.png" id="linkedin"></a>
-                    <a href="https://www.facebook.com/profile.php?id=100040493315503"><img src="../../../assets/imagenes/facebook.png" id="facebook"></a>
-                    <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Iniciar Sesión</button>
-                    <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Cerrar Sesión</button>
-                </ul>
-            </div>
-        </div>
         <!-- Banner -->
-        <div id="banner">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <img src="../../../assets/imagenes/banner.jpg" id="banner">
+            
+            <button class="btn btn-outline-info" type="button" id="boton-logo" *ngIf="isLogged" routerLink="editarbanner">
+                <i class="bi bi-pencil-square" ></i>
+            </button>
         </div>
     </div>
 </header>

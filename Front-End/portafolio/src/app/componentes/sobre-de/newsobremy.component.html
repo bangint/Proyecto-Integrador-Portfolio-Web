@@ -1,0 +1,17 @@
+<app-navegacion></app-navegacion>
+<div class="row p-4" style="background-color: rgba(245, 245, 245, 0)">
+    <div class="container col-lg-9" style="background-color: white">
+        <div class="card mx-auto text-center" style="width: 60%">
+            <form (ngSubmit)="onUpdateS()" novalidate #f="ngForm">
+                <div class="card-header">
+                    <label><h1>Un Poco de ti</h1></label>
+                </div>
+                
+                <div class="card-body form-grup">
+                    <textarea  name="sobreMy" id="sobreMy" style="width: 100%" class="text-center" rows="6"  [(ngModel)]="pers.sobreMy" required></textarea>
+                </div>
+                <button  class="btn btn-outline-success">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+</div>

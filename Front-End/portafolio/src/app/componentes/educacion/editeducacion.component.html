@@ -1,0 +1,25 @@
+
+<app-navegacion></app-navegacion>
+
+<div class="row p-4" style="background-color: rgba(245, 245, 245, 0)" *ngIf="educacion">
+    <div class="container col-lg-12" style="background-color: white;" >
+        <div class="card mx-auto text-center" style="width: 60%;">
+            <div class="card-header">
+                <h1>Formación Academica</h1>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                    <div>
+                        <label for="nombreE">Nombre del Titulo</label>
+                        <input type="text" class="form-control" id="nombreE" name="nombreE"  [(ngModel)]="educacion.nombreE" required>
+                    </div>
+                    <div>
+                        <label for="descripcionE">Descripcion de los estudios</label>
+                        <textarea name="descripcionE" iid="descripcionE"cols="30" rows="6" class="form-control"  [(ngModel)]="educacion.descripcionE" required></textarea>
+                    </div>
+                    <button class="btn btn-outline-success">Actualizar Formación Academica</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="container">
+        <div id="logo">
+            <img src="../../../assets/imagenes/APLogo.png"  routerLink="/" id="logo">
+        </div>
+        <div id="iconos">
+            <ul>
+                <a href="https://github.com/bangint"><img src="../../../assets/imagenes/github.png" id="github"></a>
+                <a href="https://www.linkedin.com/in/jos%C3%A9-oliva-0a8866227/"><img src="../../../assets/imagenes/linkedin.png" id="linkedin"></a>
+                <a href="https://www.facebook.com/profile.php?id=100040493315503"><img src="../../../assets/imagenes/facebook.png" id="facebook"></a>
+                <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Iniciar Sesión</button>
+                <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Cerrar Sesión</button>
+            </ul>
+        </div>
+    </div>
+</div>
