@@ -11,7 +11,7 @@ package Dto;
 public class dtoProyec {
     
     private String titulo;
-    private String PDescripcion;
+    private String descripcionP;
     private String img;
     
     //Constructor
@@ -19,9 +19,9 @@ public class dtoProyec {
     public dtoProyec() {
     }
 
-    public dtoProyec(String titulo, String PDescripcion, String img) {
+    public dtoProyec(String titulo, String descripcionP, String img) {
         this.titulo = titulo;
-        this.PDescripcion = PDescripcion;
+        this.descripcionP = descripcionP;
         this.img = img;
     }
     
@@ -35,12 +35,12 @@ public class dtoProyec {
         this.titulo = titulo;
     }
 
-    public String getPDescripcion() {
-        return PDescripcion;
+    public String getDescripcionP() {
+        return descripcionP;
     }
 
-    public void setPDescripcion(String PDescripcion) {
-        this.PDescripcion = PDescripcion;
+    public void setDescripcionP(String descripcionP) {
+        this.descripcionP = descripcionP;
     }
 
     public String getImg() {

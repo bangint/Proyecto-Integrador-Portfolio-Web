@@ -28,6 +28,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { EditSkillComponent } from './componentes/skills/edit-skill.component';
 import { EditsoftComponent } from './componentes/skills/editsoft.component';
 import { NewProyectComponent } from './componentes/proyectos/new-proyect.component';
+import { EditproyectComponent } from './componentes/proyectos/editproyect.component';
+import { EditphotoComponent } from './componentes/sobre-de/editphoto.component';
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import { NewProyectComponent } from './componentes/proyectos/new-proyect.compone
     EditSkillComponent,
     EditsoftComponent,
     NewProyectComponent,
+    EditproyectComponent,
+    EditphotoComponent,
     
   ],
   imports: [

@@ -126,6 +126,12 @@ p{
         left: 4%;  
         margin-top: -16%;
         }
+    #bot-perfil{
+        position: absolute;
+        left: 15%;
+        margin-top: -2%;
+
+    }
 
 }
 @media (max-width: 575px){
@@ -135,7 +141,13 @@ p{
         width: 40%;
         left: 31%;
     }
+    #bot-perfil{
+        position: absolute;
+        left: 48%;
+        margin-top: -4%;
+    }
 }
+
 #alineado{
     margin-top: 5%;
     text-align: center;

@@ -13,6 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,7 +46,7 @@ public class CProyec {
         NewProyec proyec = sProyec.buscarById(id).get();
         return new ResponseEntity(proyec, HttpStatus.OK);
     }
-    
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoProyec dtopro){
         if(sProyec.existsByTitulo(dtopro.getTitulo())){
@@ -55,23 +56,24 @@ public class CProyec {
             return new ResponseEntity(new Mensaje("El nombre del proyecto es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         
-        NewProyec proyec = new NewProyec(dtopro.getTitulo(),dtopro.getPDescripcion(),dtopro.getImg());
+        NewProyec proyec = new NewProyec(dtopro.getTitulo(),dtopro.getDescripcionP(),dtopro.getImg());
         sProyec.guardar(proyec);
         return new ResponseEntity(new Mensaje("El proyecto Fue agregado."), HttpStatus.OK);
         
     }
-    
-    @PutMapping("upload/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("update/{id}")
     public ResponseEntity<?> upDate(@PathVariable("id")int id, @RequestBody dtoProyec dtopro){
         if(!sProyec.existsById(id))
             return new ResponseEntity(new Mensaje("No existe ese ID"), HttpStatus.BAD_REQUEST);
         NewProyec proyec = sProyec.buscarById(id).get();
         proyec.setTitulo(dtopro.getTitulo());
-        proyec.setPDescripcion(dtopro.getPDescripcion());
+        proyec.setPDescripcion(dtopro.getDescripcionP());
         proyec.setImg(dtopro.getImg());
         sProyec.guardar(proyec);
         return new ResponseEntity(new Mensaje("Se guardo con exito."), HttpStatus.OK);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id")int id){
         if(!sProyec.existsById(id))

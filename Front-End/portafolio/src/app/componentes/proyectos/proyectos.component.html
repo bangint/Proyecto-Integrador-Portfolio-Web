@@ -17,7 +17,7 @@
                         {{proyecto.titulo}}
                     </h3>
                     <div class="btn-group" role="group" id="bot-expe">
-                        <button class="btn btn-outline-info" routerLink="/editexp/{{proyecto.id}}" *ngIf="isLogged"><i class="bi bi-pencil-square"></i></button>
+                        <button class="btn btn-outline-info" routerLink="/editproyec/{{proyecto.id}}" *ngIf="isLogged"><i class="bi bi-pencil-square"></i></button>
                         <button class="btn btn-outline-danger" (click)="delete(proyecto.id)" *ngIf="isLogged"><i class="bi bi-trash3-fill"></i></button>            
                     </div>
                 </div>

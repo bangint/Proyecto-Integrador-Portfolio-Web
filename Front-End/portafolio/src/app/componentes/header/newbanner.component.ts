@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-newbanner',
@@ -14,6 +15,7 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class NewbannerComponent implements OnInit {
   pers: persona = null;
+  isLogged = false;
 
   public preview: any;
   public file: any;
@@ -24,9 +26,15 @@ export class NewbannerComponent implements OnInit {
               private router: Router,
               private sanitizer: DomSanitizer,
               private activateRouter: ActivatedRoute,
-              private http: HttpClient) { }
+              private http: HttpClient,
+              private tokenService: TokenService,) { }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
     const id = this.activateRouter.snapshot.params['id'];
     this.personaS.getpersona().subscribe(data =>{this.pers = data;}, err =>{alert("Error."); this.router.navigate(['']);})
   }

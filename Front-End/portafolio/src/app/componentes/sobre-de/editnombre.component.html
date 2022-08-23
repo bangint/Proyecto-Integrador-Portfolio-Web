@@ -1,22 +1,30 @@
 <app-navegacion></app-navegacion>
-<div class="containew" *ngIf="pers">
-    <div class="row">
-        <form (ngSubmit)="onUpdateN()" novalidate #f="ngForm">
-            <div>
-                <label for="nombre">Tú Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="pers.nombre" required>
-            </div>
-            <div>
-                <label for="apellido">Tú Apellido</label>
-                <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="pers.apellido" required>
-            </div>
-            <div>
-                <label for="profesion">Tú profesión</label>
-                <input type="text" class="form-control" id="profesion" name="profesion" [(ngModel)]="pers.profesion" required>
-            </div>
+<div class="row p-4" style="background-color: rgba(245, 245, 245, 0)"*ngIf="pers">
+    <div class="container col-lg-12" style="background-color: white;">
+        <div class="card mx-auto" id="alineado" *ngIf="isLogged">
+            <div class="card-header"><h1>Editar Información Personal</h1></div>
+            
+            <div class="card-body">
+                <form (ngSubmit)="onUpdateN()" novalidate #f="ngForm">
+                    <div>
+                        <label for="nombre">Tú Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="pers.nombre" required>
+                    </div>
+                    <div>
+                        <label for="apellido">Tú Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="pers.apellido" required>
+                    </div>
+                    <div>
+                        <label for="profesion">Tú profesión</label>
+                        <input type="text" class="form-control" id="profesion" name="profesion" [(ngModel)]="pers.profesion" required>
+                    </div>
+                    <div class="p-3">
 
-            <button class="btn btn-success">Guardar Cambios</button>
-
-        </form>
+                        <button class="btn btn-outline-success">Guardar Cambios</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
     </div>
 </div>

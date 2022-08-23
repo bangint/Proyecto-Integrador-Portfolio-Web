@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Skill } from 'src/app/model/skill';
 import { SkillService } from 'src/app/service/skill.service';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-edit-skill',
@@ -13,14 +14,22 @@ export class EditSkillComponent implements OnInit {
   
   skill:  Skill = null;
   //skillsoft: SoftSkill = null;
+  isLogged = false;
   
   
 
   constructor(private activatedRouter: ActivatedRoute,
               private router: Router,
-              private skills: SkillService) { }
+              private skills: SkillService,
+              private tokenService: TokenService,) { }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
+
     const id = this.activatedRouter.snapshot.params['id'];
     this.skills.detail(id).subscribe(data =>{this.skill = data;}
       ,err =>{

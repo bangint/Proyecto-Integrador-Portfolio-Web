@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SoftSkill } from 'src/app/model/SoftSkill';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-editsoft',
@@ -10,12 +11,20 @@ import { SoftSkillService } from 'src/app/service/soft-skill.service';
 })
 export class EditsoftComponent implements OnInit {
   skill: SoftSkill = null;
+  isLogged = false;
 
   constructor(private softSkills: SoftSkillService,
               private router: Router,
-              private activateRouter: ActivatedRoute) { }
+              private activateRouter: ActivatedRoute,
+              private tokenService: TokenService,) { }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
+
     const id = this.activateRouter.snapshot.params['id'];
     this.softSkills.detail(id).subscribe(data =>{this.skill = data;
     }, err =>{

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-editeducacion',
@@ -10,13 +11,20 @@ import { EducacionService } from 'src/app/service/educacion.service';
 })
 export class EditeducacionComponent implements OnInit {
   educacion: Educacion = null;
+  isLogged = false;
 
   constructor(
     private educacionS: EducacionService,
     private activatedRouter: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private tokenService: TokenService)  { }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
     const id = this.activatedRouter.snapshot.params['id'];
     this.educacionS.detail(id).subscribe(
       data =>{

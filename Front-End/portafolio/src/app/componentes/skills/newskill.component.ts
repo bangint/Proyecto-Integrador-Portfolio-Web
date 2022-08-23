@@ -4,6 +4,7 @@ import { Skill } from 'src/app/model/skill';
 import { SoftSkill } from 'src/app/model/SoftSkill';
 import { SkillService } from 'src/app/service/skill.service';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
+import { TokenService } from 'src/app/service/token.service';
 
 
 @Component({
@@ -12,16 +13,22 @@ import { SoftSkillService } from 'src/app/service/soft-skill.service';
   styleUrls: ['./newskill.component.css']
 })
 export class NewskillComponent implements OnInit {
-  
 
+  isLogged = false;
   nombreS: string;
   capacidadS: number;
   tipoS: string;
 
 
-  constructor(private skillS: SkillService, private router: Router, private softSkills: SoftSkillService) { }
+  constructor(private skillS: SkillService, private router: Router, private softSkills: SoftSkillService,
+    private tokenService: TokenService,) { }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
 
