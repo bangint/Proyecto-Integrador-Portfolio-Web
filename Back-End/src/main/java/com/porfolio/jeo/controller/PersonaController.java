@@ -30,8 +30,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("persona/")
-//@CrossOrigin(origins = "https://portafolioweb-de08f.web.app/")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://portafolioweb-de08f.web.app/")
+//@CrossOrigin(origins = "*")
 
 
 public class PersonaController {
@@ -56,24 +56,8 @@ public class PersonaController {
         persona editpers = personaService.editpersona(pers);
         return new ResponseEntity<>(editpers, HttpStatus.OK);
     }
-    @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("editarsobreMy/{id}")
-    public persona editarSobreMy(@PathVariable("id")int id,
-                                                                                            @RequestParam("sobreMy")String nuevosobreMy){
-        persona pers = personaService.BuscarporId(id);
-        pers.setSobreMy(nuevosobreMy);
-        personaService.editpersona(pers);
-        return pers;
-    }
+
     
-    @PostMapping("img/{id}")
-    public persona editimg(@PathVariable("id")int id,
-                                                                            @RequestParam("img") String nuevaimg){
-        persona pers = personaService.BuscarporId(id);
-        pers.setImg(nuevaimg);
-        personaService.editpersona(pers);
-        return pers;
-    }
     
     
 }

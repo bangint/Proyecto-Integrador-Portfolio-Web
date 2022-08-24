@@ -30,8 +30,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("softskill")
-//@CrossOrigin(origins = "https://portafolioweb-de08f.web.app/")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://portafolioweb-de08f.web.app/")
+//@CrossOrigin(origins = "*")
 public class CSoftSkill {
     @Autowired
     SSoftSkill sSoftSkill;
