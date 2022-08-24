@@ -30,6 +30,9 @@ import { EditsoftComponent } from './componentes/skills/editsoft.component';
 import { NewProyectComponent } from './componentes/proyectos/new-proyect.component';
 import { EditproyectComponent } from './componentes/proyectos/editproyect.component';
 import { EditphotoComponent } from './componentes/sobre-de/editphoto.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -67,6 +70,8 @@ import { EditphotoComponent } from './componentes/sobre-de/editphoto.component';
 	  HttpClientModule,
     FormsModule,
     CKEditorModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
     
     
   ],

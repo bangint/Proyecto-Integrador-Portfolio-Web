@@ -19,18 +19,5 @@ export class PersonaService {
   public personaEditar( pers: persona): Observable<persona>{
     return this.http.put<any>(this.URL+`update/${1}`, pers);
   }
-
-  public editaPhoto(id: number, pers: persona): Observable<persona>{
-    return this.http.put<any>(this.URL+ `editarfoto/${id}`, pers);
-  }
-
-  public editarBanner(id: number, banner: any): Observable<persona>{  
-    return this.http.post<any>(this.URL+`banner/${id}`, banner);
-
-  }
-
-  public editarSobreMy(id: number, pers: persona): Observable<persona>{
-    return this.http.put<any>(this.URL+`editarsobreMy/${id}`, pers);
-  }
-
+ 
 }

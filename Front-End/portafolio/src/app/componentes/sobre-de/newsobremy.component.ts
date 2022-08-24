@@ -43,9 +43,9 @@ export class NewsobremyComponent implements OnInit {
   onUpdateS(): void{
     this.personaS.personaEditar(this.pers).subscribe(
       data =>{
-        
+        alert("Se modifico con exito.");
         this.router.navigate(['']);
-        console.log(this.pers);
+        
         
         }, err =>{
           console.log(this.pers)

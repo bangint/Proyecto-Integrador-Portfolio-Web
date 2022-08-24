@@ -22,9 +22,9 @@ export class NavegacionComponent implements OnInit {
   }
 
   onLogOut(): void{
-    this.router.navigate([''])
     window.location.reload;
     this.tokenService.logOut();
+    this.router.navigate(['/login'])
   }
 
   login(){

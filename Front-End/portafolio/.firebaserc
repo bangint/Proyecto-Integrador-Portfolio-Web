@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "portafolioweb-de08f"
+  },
+  "targets": {
+    "portafolioweb-de08f": {
+      "hosting": {
+        "portafolio": [
+          "portafolioweb-de08f"
+        ]
+      }
+    }
   }
 }

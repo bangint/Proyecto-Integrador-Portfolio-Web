@@ -2,9 +2,9 @@
     <div class="row">
         <!-- Banner -->
         <div class="col-sm-12 col-md-12 col-lg-12">
-            <img src="../../../assets/imagenes/banner.jpg" id="banner">
+            <img [src]="imgbanner" id="banner">
             
-            <button class="btn btn-outline-info" type="button" id="boton-logo" *ngIf="isLogged" routerLink="editarbanner">
+            <button class="btn btn-outline-info" type="button" id="boton-logo"  routerLink="editarbanner">
                 <i class="bi bi-pencil-square" ></i>
             </button>
         </div>

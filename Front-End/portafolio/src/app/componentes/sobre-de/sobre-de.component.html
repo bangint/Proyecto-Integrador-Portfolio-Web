@@ -1,7 +1,7 @@
 <div class="row">
     <!-- Foto -->
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-         <img class= "img-fluid rounded-circle" src="../../../assets/imagenes/yo.jpeg" id="perfil">
+         <img class= "img-fluid rounded-circle" [src]="imgperfil" id="perfil">
          <button class="btn btn-outline-info" type="button" id="bot-perfil" routerLink="editphoto" *ngIf="isLogged"><i class="bi bi-pencil-square" ></i></button>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="alineado-nom">
